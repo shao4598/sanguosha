@@ -2,6 +2,14 @@
 
 这是一个三国杀斗地主战绩管理系统。
 
+## 下载 ```npm``` 包
+
+为了节省体积，所有工程都没有上传 ```node_modules``` 文件夹，需要使用命令行自行下载
+
+```
+$ npm i
+```
+
 ## 编译客户端代码
 
 ```
@@ -38,7 +46,7 @@ output: {
 
 ##  启动 ```Node.js``` 版服务端代码
 
-拷贝客户端生成的 ```index.html```、```app.bundle.js```、```* vendor.bundle.js``` 到本工程 ```views``` 目录下，然后用命令行启动。
+拷贝客户端生成的 ```index.html```、```app.bundle.js```、```vendor.bundle.js``` 到本工程 ```views``` 目录下，然后用命令行启动。
 
 ```
 $ cd server_node

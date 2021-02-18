@@ -48,7 +48,7 @@ module.exports = {
 	},
 	output: {
 		filename: '[name].bundle.js',
-		path: path.resolve('../sanguosha_server/', 'views'),
+		path: path.resolve('./', 'dist'),
 		publicPath: './',
 	},
 	resolve: {

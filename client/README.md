@@ -1,7 +1,3 @@
-## 简介
-
-这是一个三国杀斗地主战绩管理系统。
-
 ## 编译客户端代码
 
 ```
@@ -34,14 +30,4 @@ output: {
     path: path.resolve('./', 'dist'),
     publicPath: './',
 }
-```
-
-##  启动 ```Node.js``` 版服务端代码
-
-拷贝客户端生成的 ```index.html```、```app.bundle.js```、```* vendor.bundle.js``` 到本工程 ```views``` 目录下，然后用命令行启动。
-
-```
-$ cd server_node
-
-$ node index.js
 ```

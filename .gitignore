@@ -1,0 +1,7 @@
+.gitignore
+client/dist
+server_node/views/vendor.bundle.js
+server_node/views/app.bundle.js
+server_node/views/index.html
+server_node/views/app.bundle.js.LICENSE.txt
+server_node/views/vendor.bundle.js.LICENSE.txt

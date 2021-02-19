@@ -1,0 +1,6 @@
+.gitignore
+views/vendor.bundle.js
+views/app.bundle.js
+views/index.html
+views/app.bundle.js.LICENSE.txt
+views/vendor.bundle.js.LICENSE.txt

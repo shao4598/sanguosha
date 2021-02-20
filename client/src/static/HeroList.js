@@ -365,6 +365,7 @@ export default [
 	{ value: '严畯', words: 'yj', nickName: '' },
 	{ value: '周鲂', words: 'zf', nickName: '' },
 	{ value: '吕岱', words: 'ld', nickName: '' },
+	{ value: '卫温诸葛直', words: 'wwzgz', nickName: '' },
 	{ value: '刘繇', words: 'ly', nickName: '' },
 	{ value: '刘焉', words: 'ly', nickName: '' },
 	{ value: '董承', words: 'dc', nickName: '' },

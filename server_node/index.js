@@ -26,8 +26,8 @@ app.get('/records/games/:id', (req, res) => {
 			res.send({ status: '-1' })
 		})
 })
-app.get('/records/todayIncome/:id', (req, res) => {
-	getTodayIncome(req.params.id)
+app.get('/records/income/:id', (req, res) => {
+	getIncome(req.params.id, req.query)
 		.then((data) => {
 			res.send({
 				status: '0',
@@ -316,17 +316,10 @@ function updateAssets(playerId, params) {
 }
 
 function getRecordsGames(playerId, params) {
-	let start = ''
-	let end = ''
-	if (params) {
-		start = params.start
-		end = params.end
-	} else {
-		start = dayjs().hour(0).minute(0).second(0).unix()
-		end = dayjs().hour(23).minute(59).second(59).unix()
-	}
 	return new Promise((resolve, reject) => {
 		const db = new sqlite3.Database('sanguosha.db')
+		const start = params.start
+		const end = params.end
 		db.all(
 			'SELECT * FROM records_games WHERE player_id = ? AND timestamp > ? AND timestamp < ? ORDER BY timestamp desc',
 			playerId,
@@ -519,11 +512,11 @@ function deleteRecordsBeans(playerId, guid) {
 	})
 }
 
-function getTodayIncome(playerId) {
+function getIncome(playerId, params) {
 	return new Promise((resolve, reject) => {
 		const db = new sqlite3.Database('sanguosha.db')
-		const start = dayjs().hour(0).minute(0).second(0).unix()
-		const end = dayjs().hour(23).minute(59).second(59).unix()
+		const start = params.start
+		const end = params.end
 		db.get(
 			'SELECT SUM(beans) AS beans, SUM(golds) AS golds FROM records_games WHERE player_id = ? AND timestamp >= ? AND timestamp<= ?',
 			playerId,

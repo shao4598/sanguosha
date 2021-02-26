@@ -560,15 +560,10 @@
 <script>
 import axios from 'axios'
 import dayjs from 'dayjs'
-import {
-	goldsModeMap,
-	beansModeMap,
-	isWinMap,
-	roomMap,
-	roleMap,
-} from '@/static/RecordsMaps.js'
-import heroList from '@/static/HeroList.js'
+import RecordsMaps from '@/static/RecordsMaps.js'
+import HeroList from '@/static/HeroList.js'
 export default {
+	mixins: [RecordsMaps, HeroList],
 	created() {
 		this.token = this.$route.params.id
 		if (this.token !== 's21294' && this.token !== 'w15579') {
@@ -636,12 +631,6 @@ export default {
 			recordsGames: [],
 			recordsGolds: [],
 			recordsBeans: [],
-			goldsModeMap,
-			beansModeMap,
-			isWinMap,
-			roomMap,
-			roleMap,
-			heroList,
 		}
 	},
 	computed: {

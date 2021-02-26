@@ -162,8 +162,8 @@
 				>
 					<el-form-item label-width="0px">
 						<date-picker
-							v-model="formSearch.range"
-							:model-config="datePickerConfig"
+							v-model="datePicker.range"
+							:model-config="datePicker.config"
 							is-range
 							is-expanded
 						></date-picker>
@@ -329,10 +329,10 @@
 			</el-col>
 			<el-col :span="5">
 				<el-row style="margin-bottom: 20px">
-					<span>当天获得金票：{{ todayGolds }}</span>
+					<span>获得金票：{{ todayGolds }}</span>
 				</el-row>
 				<el-row style="margin-bottom: 20px">
-					<span>当天消耗欢乐豆：{{ todayBeans }}</span>
+					<span>消耗欢乐豆：{{ todayBeans }}</span>
 				</el-row>
 				<el-row style="margin-bottom: 20px">
 					<el-col :span="10">
@@ -574,10 +574,10 @@ export default {
 		if (this.token !== 's21294' && this.token !== 'w15579') {
 			return
 		}
-		this.getRecordsGames(this.checkSearchParams())
+		this.getRecordsGames()
 		this.getNowGolds()
 		this.getNowBeans()
-		this.getTheDay()
+		this.getIncome()
 	},
 	data() {
 		return {
@@ -614,26 +614,23 @@ export default {
 				mode: '0',
 			},
 			formSearch: {
-				range: {
-					start: dayjs()
-						.subtract(6, 'day')
-						.hour(0)
-						.minute(0)
-						.second(0)
-						.toDate(),
-					end: dayjs().hour(23).minute(59).second(59).toDate(),
-				},
 				hero: '',
 				role: 'all',
 				player: '0',
 				isWin: 'all',
 			},
-			datePickerConfig: {
-				start: {
-					timeAdjust: '00:00:00',
+			datePicker: {
+				config: {
+					start: {
+						timeAdjust: '00:00:00',
+					},
+					end: {
+						timeAdjust: '23:59:59',
+					},
 				},
-				end: {
-					timeAdjust: '23:59:59',
+				range: {
+					start: dayjs().hour(0).minute(0).second(0).toDate(),
+					end: dayjs().hour(23).minute(59).second(59).toDate(),
 				},
 			},
 			recordsGames: [],
@@ -647,27 +644,18 @@ export default {
 			heroList,
 		}
 	},
-	methods: {
-		checkSearchParams() {
-			const start = dayjs(this.formSearch.range.start).unix()
-			const end = dayjs(this.formSearch.range.end).unix()
-			const hero = this.formSearch.hero
-			const role = this.formSearch.role
-			const player = this.formSearch.player
-			const isWin = this.formSearch.isWin
+	computed: {
+		datePickerRangeUnix() {
 			return {
-				range: {
-					start,
-					end,
-				},
-				hero,
-				role,
-				player,
-				isWin,
+				start: dayjs(this.datePicker.range.start).unix(),
+				end: dayjs(this.datePicker.range.end).unix(),
 			}
 		},
+	},
+	methods: {
 		search() {
-			this.getRecordsGames(this.checkSearchParams())
+			this.getRecordsGames()
+			this.getIncome()
 		},
 		querySearch(queryString, callback) {
 			const results = queryString
@@ -707,10 +695,10 @@ export default {
 							if (status !== '0') {
 								return
 							}
-							this.getRecordsGames(this.checkSearchParams())
+							this.getRecordsGames()
 							this.getNowGolds()
 							this.getNowBeans()
-							this.getTheDay()
+							this.getIncome()
 						})
 				})
 				.catch(() => {})
@@ -826,11 +814,11 @@ export default {
 					if (status !== '0') {
 						return
 					}
-					this.getRecordsGames(this.checkSearchParams())
+					this.getRecordsGames()
 					this.getNowGolds()
 					this.getNowBeans()
 					this.dialogFormGamesVisible = false
-					this.getTheDay()
+					this.getIncome()
 				})
 		},
 		onSubmitRecordsGolds() {
@@ -855,7 +843,8 @@ export default {
 					this.dialogFormBeansVisible = false
 				})
 		},
-		getRecordsGames(form) {
+		getRecordsGames() {
+			const form = this.formSearch
 			if (form.player === '1' && form.role === 'all') {
 				this.$message({
 					message: '请选择身份',
@@ -865,21 +854,14 @@ export default {
 			}
 			this.recordsGames = []
 			axios
-				.get('/records/games/' + this.token, { params: form.range })
+				.get('/records/games/' + this.token, {
+					params: this.datePickerRangeUnix,
+				})
 				.then(({ data: { status, data } }) => {
 					if (status !== '0') {
 						return
 					}
 					data.forEach((item) => {
-						const date = dayjs
-							.unix(parseInt(item.timestamp))
-							.format('MM-DD HH:mm')
-						const color = this.isWinMap[parseInt(item.is_win)].color
-						const roomLabel = this.roomMap[parseInt(item.room)]
-						const isWinLabel = this.isWinMap[parseInt(item.is_win)]
-							.label
-						const roleLabel = this.roleMap[parseInt(item.role)]
-
 						if (
 							form.isWin !== 'all' &&
 							form.isWin !== item.is_win
@@ -935,6 +917,15 @@ export default {
 								}
 							}
 						}
+
+						const date = dayjs
+							.unix(parseInt(item.timestamp))
+							.format('MM-DD HH:mm')
+						const color = this.isWinMap[parseInt(item.is_win)].color
+						const roomLabel = this.roomMap[parseInt(item.room)]
+						const isWinLabel = this.isWinMap[parseInt(item.is_win)]
+							.label
+						const roleLabel = this.roleMap[parseInt(item.role)]
 
 						this.recordsGames.push({
 							date,
@@ -1024,9 +1015,11 @@ export default {
 					this.nowBeans = data
 				})
 		},
-		getTheDay() {
+		getIncome() {
 			axios
-				.get('/records/todayIncome/' + this.token)
+				.get('/records/income/' + this.token, {
+					params: this.datePickerRangeUnix,
+				})
 				.then(({ data: { status, data } }) => {
 					if (status !== '0') {
 						return

@@ -560,8 +560,8 @@
 <script>
 import axios from 'axios'
 import dayjs from 'dayjs'
-import RecordsMaps from '@/static/RecordsMaps.js'
-import HeroList from '@/static/HeroList.js'
+import RecordsMaps from '@/mixins/RecordsMaps.js'
+import HeroList from '@/mixins/HeroList.js'
 export default {
 	mixins: [RecordsMaps, HeroList],
 	created() {

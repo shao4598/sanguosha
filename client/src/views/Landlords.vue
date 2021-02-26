@@ -786,31 +786,32 @@ export default {
 		onSubmitRecordsGames() {
 			let golds = 0
 			let beans = 0
-			const base = this.formRecordsGames.room === '0' ? 100 : 300
-			const tickets = this.formRecordsGames.room === '0' ? 10 : 40
-			if (this.formRecordsGames.isWin === '1') {
-				golds += base * parseInt(this.formRecordsGames.multiple)
+			const form = this.formRecordsGames
+			const base = form.room === '0' ? 100 : 300
+			const tickets = form.room === '0' ? 10 : 40
+			if (form.isWin === '1') {
+				golds += base * parseInt(form.multiple)
 				beans -= tickets
 				// 地主翻倍
-				if (this.formRecordsGames.role === '0') {
+				if (form.role === '0') {
 					golds *= 2
 					beans *= 2
 				}
 			} else {
-				beans -= base * parseInt(this.formRecordsGames.multiple)
+				beans -= base * parseInt(form.multiple)
 				// 地主翻倍
-				if (this.formRecordsGames.role === '0') {
+				if (form.role === '0') {
 					beans *= 2
 				}
 				// 逃跑多扣5个豆
-				if (this.formRecordsGames.isFlee === '1') {
+				if (form.isFlee === '1') {
 					beans -= 5
 				}
 			}
-			this.formRecordsGames.golds = golds.toString()
-			this.formRecordsGames.beans = beans.toString()
+			form.golds = golds.toString()
+			form.beans = beans.toString()
 			axios
-				.post('/records/games/' + this.token, this.formRecordsGames)
+				.post('/records/games/' + this.token, form)
 				.then(({ data: { status } }) => {
 					if (status !== '0') {
 						return
@@ -818,8 +819,8 @@ export default {
 					this.getRecordsGames()
 					this.getNowGolds()
 					this.getNowBeans()
-					this.dialogFormGamesVisible = false
 					this.getIncome()
+					this.dialogFormGamesVisible = false
 				})
 		},
 		onSubmitRecordsGolds() {

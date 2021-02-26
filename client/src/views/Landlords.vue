@@ -756,18 +756,19 @@ export default {
 				.catch(() => {})
 		},
 		onCloseDialogRecordsGames() {
-			this.formRecordsGames.room = '0'
-			this.formRecordsGames.landlord = ''
-			this.formRecordsGames.farmer1 = ''
-			this.formRecordsGames.farmer2 = ''
-			this.formRecordsGames.isWin = '1'
-			this.formRecordsGames.role = '0'
-			this.formRecordsGames.multiple = '3'
-			this.formRecordsGames.golds = ''
-			this.formRecordsGames.beans = ''
-			this.formRecordsGames.remarks = ''
-			this.formRecordsGames.isFlee = '0'
 			this.ckbIsFleeVisible = false
+			const form = this.formRecordsGames
+			form.room = '0'
+			form.landlord = ''
+			form.farmer1 = ''
+			form.farmer2 = ''
+			form.isWin = '1'
+			form.role = '0'
+			form.multiple = '3'
+			form.golds = ''
+			form.beans = ''
+			form.remarks = ''
+			form.isFlee = '0'
 		},
 		onChangeIsWin(val) {
 			const res = val === '0'

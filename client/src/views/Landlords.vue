@@ -376,13 +376,11 @@
 										@change="onChangeGoldsMode"
 									>
 										<el-radio-button
-											v-for="(
-												value, name
-											) in goldsModeMap"
-											:key="name"
-											:label="name.toString()"
+											v-for="item in goldsModeCollection"
+											:key="item.no"
+											:label="item.no"
 										>
-											{{ value.label }}
+											{{ item.label }}
 										</el-radio-button>
 									</el-radio-group>
 								</el-form-item>
@@ -485,13 +483,11 @@
 										@change="onChangeBeansMode"
 									>
 										<el-radio-button
-											v-for="(
-												value, name
-											) in beansModeMap"
-											:key="name"
-											:label="name.toString()"
+											v-for="item in beansModeCollection"
+											:key="item.no"
+											:label="item.no"
 										>
-											{{ value.label }}
+											{{ item.label }}
 										</el-radio-button>
 									</el-radio-group>
 								</el-form-item>

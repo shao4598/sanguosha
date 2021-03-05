@@ -216,6 +216,8 @@ export default {
 				{ value: '朱然', words: 'zr', nickName: '' },
 				{ value: '伏皇后', words: 'fhh', nickName: '' },
 				{ value: '李儒', words: 'lr', nickName: '' },
+				// 三将成名 界限突破
+				{ value: '界朱然', words: 'jzr', nickName: '' },
 				// 四将成名
 				{ value: '蔡夫人', words: 'cfr', nickName: '' },
 				{ value: '曹真', words: 'cz', nickName: '' },

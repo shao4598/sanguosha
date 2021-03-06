@@ -18,6 +18,7 @@
 					center
 					title="添加战绩"
 					:visible.sync="dialogFormGamesVisible"
+					:close-on-click-modal="false"
 					@close="onCloseDialogRecordsGames"
 				>
 					<el-form label-width="120px" :model="formRecordsGames">

@@ -1,0 +1,32 @@
+server:
+  compression:
+    mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
+    min-response-size: 2048
+    enabled: true
+  tomcat:
+    accesslog:
+      enabled: true
+    max-threads: 1000
+    max-connections: 2000
+    uri-encoding: UTF-8
+  servlet:
+    session:
+      timeout: -1
+    context-path: /
+spring:
+  aop:
+    auto: true
+  thymeleaf:
+    cache: false
+    mode: HTML5
+    suffix: .html
+    prefix: classpath:/templates/
+  devtools:
+    restart:
+      additional-exclude: data/sanguosha.db
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    url: jdbc:sqlite::resource:data/sanguosha.db
+
+
+

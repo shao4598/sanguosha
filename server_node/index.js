@@ -1,6 +1,5 @@
 const express = require('express')
 const path = require('path')
-const bodyParser = require('body-parser')
 const sqlite3 = require('sqlite3').verbose()
 const app = express()
 const { v1: uuidv1 } = require('uuid')
@@ -9,9 +8,8 @@ const dayjs = require('dayjs')
 app.set('port', process.env.PORT || 3000)
 
 app.use(express.static(path.join(__dirname, '/views')))
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.text())
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 
 app.get('/records/games/:id', (req, res) => {
 	getRecordsGames(req.params.id, req.query)

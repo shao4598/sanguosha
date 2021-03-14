@@ -11,6 +11,8 @@ app.use(express.static(path.join(__dirname, '/views')))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
+let databaseSource = './db/sanguosha.db'
+
 app.get('/records/games/:id', (req, res) => {
 	getRecordsGames(req.params.id, req.query)
 		.then((data) => {
@@ -259,7 +261,7 @@ app.listen(app.get('port'), function () {
 
 function getNowGolds(playerId) {
 	return new Promise((resolve, reject) => {
-		const db = new sqlite3.Database('sanguosha.db')
+		const db = new sqlite3.Database(databaseSource)
 		db.get(
 			'SELECT now_golds FROM assets WHERE player_id = ?',
 			playerId,
@@ -276,7 +278,7 @@ function getNowGolds(playerId) {
 
 function getNowBeans(playerId) {
 	return new Promise((resolve, reject) => {
-		const db = new sqlite3.Database('sanguosha.db')
+		const db = new sqlite3.Database(databaseSource)
 		db.get(
 			'SELECT now_beans FROM assets WHERE player_id = ?',
 			playerId,
@@ -302,7 +304,7 @@ function updateAssets(playerId, params) {
 	sql = sql.slice(0, -1)
 	sql += ' WHERE player_id = ?'
 	return new Promise((resolve, reject) => {
-		const db = new sqlite3.Database('sanguosha.db')
+		const db = new sqlite3.Database(databaseSource)
 		db.run(sql, playerId, (err) => {
 			if (err) {
 				reject(new Error(err))
@@ -315,7 +317,7 @@ function updateAssets(playerId, params) {
 
 function getRecordsGames(playerId, params) {
 	return new Promise((resolve, reject) => {
-		const db = new sqlite3.Database('sanguosha.db')
+		const db = new sqlite3.Database(databaseSource)
 		const start = params.start
 		const end = params.end
 		db.all(
@@ -353,7 +355,7 @@ function createRecordsGames(playerId, params) {
 		$timestamp: dayjs().unix(),
 	}
 	return new Promise((resolve, reject) => {
-		const db = new sqlite3.Database('sanguosha.db')
+		const db = new sqlite3.Database(databaseSource)
 		db.run(
 			'INSERT INTO records_games VALUES ($guid, $player_id, $room, $landlord, $farmer1, $farmer2, $is_win, $role, $multiple, $golds, $beans, $is_flee, $remarks, $timestamp)',
 			values,
@@ -370,7 +372,7 @@ function createRecordsGames(playerId, params) {
 
 function deleteRecordsGames(playerId, guid) {
 	return new Promise((resolve, reject) => {
-		const db = new sqlite3.Database('sanguosha.db')
+		const db = new sqlite3.Database(databaseSource)
 		db.run(
 			'DELETE FROM records_games WHERE guid = ? AND player_id = ?',
 			guid,
@@ -388,7 +390,7 @@ function deleteRecordsGames(playerId, guid) {
 
 function getRecordsGolds(playerId) {
 	return new Promise((resolve, reject) => {
-		const db = new sqlite3.Database('sanguosha.db')
+		const db = new sqlite3.Database(databaseSource)
 		const start = dayjs()
 			.subtract(6, 'day')
 			.hour(0)
@@ -415,7 +417,7 @@ function getRecordsGolds(playerId) {
 
 function createRecordsGolds(params) {
 	return new Promise((resolve, reject) => {
-		const db = new sqlite3.Database('sanguosha.db')
+		const db = new sqlite3.Database(databaseSource)
 		db.run(
 			'INSERT INTO records_golds VALUES ($guid, $player_id, $count, $mode, $timestamp)',
 			params,
@@ -432,7 +434,7 @@ function createRecordsGolds(params) {
 
 function deleteRecordsGolds(playerId, guid) {
 	return new Promise((resolve, reject) => {
-		const db = new sqlite3.Database('sanguosha.db')
+		const db = new sqlite3.Database(databaseSource)
 		db.run(
 			'DELETE FROM records_golds WHERE guid = ? AND player_id = ?',
 			guid,
@@ -450,7 +452,7 @@ function deleteRecordsGolds(playerId, guid) {
 
 function getRecordsBeans(playerId) {
 	return new Promise((resolve, reject) => {
-		const db = new sqlite3.Database('sanguosha.db')
+		const db = new sqlite3.Database(databaseSource)
 		const start = dayjs()
 			.subtract(6, 'day')
 			.hour(0)
@@ -477,7 +479,7 @@ function getRecordsBeans(playerId) {
 
 function createRecordsBeans(params) {
 	return new Promise((resolve, reject) => {
-		const db = new sqlite3.Database('sanguosha.db')
+		const db = new sqlite3.Database(databaseSource)
 		db.run(
 			'INSERT INTO records_beans VALUES ($guid, $player_id, $count, $mode, $timestamp)',
 			params,
@@ -494,7 +496,7 @@ function createRecordsBeans(params) {
 
 function deleteRecordsBeans(playerId, guid) {
 	return new Promise((resolve, reject) => {
-		const db = new sqlite3.Database('sanguosha.db')
+		const db = new sqlite3.Database(databaseSource)
 		db.run(
 			'DELETE FROM records_beans WHERE guid = ? AND player_id = ?',
 			guid,
@@ -512,7 +514,7 @@ function deleteRecordsBeans(playerId, guid) {
 
 function getIncome(playerId, params) {
 	return new Promise((resolve, reject) => {
-		const db = new sqlite3.Database('sanguosha.db')
+		const db = new sqlite3.Database(databaseSource)
 		const start = params.start
 		const end = params.end
 		db.get(

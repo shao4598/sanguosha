@@ -8,12 +8,12 @@
 
 3. 拷贝客户端生成的 ```app.bundle.js```、```vendor.bundle.js``` 到本工程 ```src/main/resources/static``` 目录下。
 
-4. 使用 Maven package 打包
+4. 使用 Maven package 打包。
 
-5. 用命令行启动 package 生成的 jar 包
+5. 使用命令行启动 package 生成的 jar 包。
 
 ```shell
 $ java -jar ./target/sgs.jar
 ```
 
-6. 使用浏览器访问 ```http://localhost:9900```
+6. 使用浏览器访问 ```http://localhost:9900```。

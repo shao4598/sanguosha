@@ -2,7 +2,7 @@
 
 0. 自行配置 Node.js 与 npm 环境。
 
-1. 打开 server_node 文件夹。
+1. 以 server_node 文件夹作为工程目录。
 
 2. 使用命令行下载第三方依赖库。
 

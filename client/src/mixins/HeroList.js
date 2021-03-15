@@ -218,6 +218,8 @@ export default {
 				{ value: '李儒', words: 'lr', nickName: '' },
 				// 三将成名 界限突破
 				{ value: '界朱然', words: 'jzr', nickName: '' },
+				{ value: '界简雍', words: 'jjy', nickName: '' },
+				{ value: '界虞翻', words: 'jyf', nickName: '' },
 				// 四将成名
 				{ value: '蔡夫人', words: 'cfr', nickName: '' },
 				{ value: '曹真', words: 'cz', nickName: '' },
@@ -285,6 +287,7 @@ export default {
 				{ value: '胡金定', words: 'hjd', nickName: '' },
 				{ value: '郑玄', words: 'zx', nickName: '' },
 				{ value: '羊徽瑜', words: 'ywy', nickName: '' },
+				{ value: '司马师', words: 'sms', nickName: '' },
 				// SP
 				{ value: '伏完', words: 'fw', nickName: '' },
 				{ value: '刘协', words: 'lx', nickName: '' },

@@ -28,7 +28,7 @@ import java.util.*;
  */
 public class Tools {
     private static final char[] HEX_DIGITS = "0123456789abcdef".toCharArray();
-    private static final char[] CHAR_ARRAY = "_-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
+    //private static final char[] CHAR_ARRAY = "_-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
 
     /**
      * @param str 待加密字符串

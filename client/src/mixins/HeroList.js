@@ -220,6 +220,8 @@ export default {
 				{ value: '界朱然', words: 'jzr', nickName: '' },
 				{ value: '界简雍', words: 'jjy', nickName: '' },
 				{ value: '界虞翻', words: 'jyf', nickName: '' },
+				{ value: '界满宠', words: 'jmc', nickName: '' },
+				{ value: '界李儒', words: 'jlr', nickName: '' },
 				// 四将成名
 				{ value: '蔡夫人', words: 'cfr', nickName: '' },
 				{ value: '曹真', words: 'cz', nickName: '' },
@@ -286,7 +288,7 @@ export default {
 				{ value: '王元姬', words: 'wyj', nickName: '' },
 				{ value: '胡金定', words: 'hjd', nickName: '' },
 				{ value: '郑玄', words: 'zx', nickName: '' },
-				{ value: '羊徽瑜', words: 'ywy', nickName: '' },
+				{ value: '羊徽瑜', words: 'yhy', nickName: '' },
 				{ value: '司马师', words: 'sms', nickName: '' },
 				// SP
 				{ value: '伏完', words: 'fw', nickName: '' },
@@ -381,6 +383,7 @@ export default {
 				{ value: '董承', words: 'dc', nickName: '' },
 				{ value: '审配', words: 'sp', nickName: '' },
 				{ value: '丁原', words: 'dy', nickName: '' },
+				{ value: '傅肜', words: 'fr', nickName: '' },
 			],
 		}
 	},

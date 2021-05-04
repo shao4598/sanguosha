@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const sqlite3 = require('sqlite3').verbose()
+const cors = require('cors')
 const app = express()
 const { v1: uuidv1 } = require('uuid')
 const dayjs = require('dayjs')
@@ -10,8 +11,9 @@ app.set('port', process.env.PORT || 3000)
 app.use(express.static(path.join(__dirname, '/views')))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
+app.use(cors())
 
-let databaseSource = './db/sanguosha.db'
+const databaseSource = './db/sanguosha.db'
 
 app.get('/records/games/:id', (req, res) => {
 	getRecordsGames(req.params.id, req.query)

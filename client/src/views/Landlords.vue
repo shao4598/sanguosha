@@ -488,7 +488,6 @@ export default {
     this.getNowGolds()
     this.getNowBeans()
     this.getIncome()
-    console.log(this.serverUrl)
   },
   data() {
     return {
@@ -548,7 +547,7 @@ export default {
       recordsGames: [],
       recordsGolds: [],
       recordsBeans: [],
-      serverUrl: 'http://' + window.config.ip + ':' + window.config.port,
+      serverUrl: 'http://127.0.0.1:3000',
     }
   },
   computed: {

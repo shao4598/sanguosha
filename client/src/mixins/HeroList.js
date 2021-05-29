@@ -388,6 +388,8 @@ export default {
         { value: '审配', words: 'sp', nickName: '' },
         { value: '丁原', words: 'dy', nickName: '' },
         { value: '傅肜', words: 'fr', nickName: '' },
+        { value: '陈登', words: 'cd', nickName: '' },
+        { value: '胡车儿', words: 'hce', nickName: '' },
       ],
     }
   },

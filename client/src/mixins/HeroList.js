@@ -208,6 +208,8 @@ export default {
         { value: '界韩当', words: 'jhd', nickName: '' },
         { value: '界刘表', words: 'jlb', nickName: '' },
         { value: '界公孙瓒', words: 'jgsz', nickName: '' },
+        { value: '界廖化', words: 'jlh', nickName: '' },
+        { value: '界曹彰', words: 'jcz', nickName: '' },
         // 三将成名
         { value: '曹冲', words: 'cc', nickName: '' },
         { value: '郭淮', words: 'gh', nickName: '' },
@@ -294,6 +296,7 @@ export default {
         { value: '郑玄', words: 'zx', nickName: '' },
         { value: '羊徽瑜', words: 'yhy', nickName: '' },
         { value: '司马师', words: 'sms', nickName: '' },
+        { value: '杨彪', words: 'yb', nickName: '' },
         // SP
         { value: '伏完', words: 'fw', nickName: '' },
         { value: '刘协', words: 'lx', nickName: '' },

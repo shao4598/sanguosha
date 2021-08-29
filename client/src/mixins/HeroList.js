@@ -148,13 +148,16 @@ export default {
         { value: '陆抗', words: 'lk', nickName: '' },
         { value: '毌丘俭', words: 'gqj', nickName: '' },
         { value: '张绣', words: 'zx', nickName: '' },
-        // 始计篇
+        // 始计篇 智
         { value: '王粲', words: 'wc', nickName: '' },
         { value: '陈震', words: 'cz', nickName: '' },
         { value: '荀谌', words: 'xc', nickName: '' },
         { value: '费祎', words: 'fy', nickName: '' },
         { value: '骆统', words: 'lt', nickName: '' },
         { value: '杜预', words: 'dy', nickName: '' },
+        // 始计篇 信
+        { value: '辛毗', words: 'xp', nickName: '' },
+        { value: '周处', words: 'zc', nickName: '' },
         // 神
         { value: '神关羽', words: 'sgy', nickName: '' },
         { value: '神吕蒙', words: 'slm', nickName: '' },
@@ -233,6 +236,7 @@ export default {
         { value: '界李儒', words: 'jlr', nickName: '' },
         { value: '界伏皇后', words: 'jfhh', nickName: '' },
         { value: '界郭淮', words: 'jgh', nickName: '' },
+        { value: '界潘璋马忠', words: 'jpzmz', nickName: '' },
         // 四将成名
         { value: '蔡夫人', words: 'cfr', nickName: '' },
         { value: '曹真', words: 'cz', nickName: '' },
@@ -245,6 +249,8 @@ export default {
         { value: '张松', words: 'zs', nickName: '光头' },
         { value: '周仓', words: 'zc', nickName: '' },
         { value: '朱桓', words: 'zh', nickName: '' },
+        // 四将成名 界限突破
+        { value: '界陈群', words: 'jcq', nickName: '' },
         // 五将成名
         { value: '曹叡', words: 'cr', nickName: '' },
         { value: '曹休', words: 'cx', nickName: '' },
@@ -302,6 +308,7 @@ export default {
         { value: '羊徽瑜', words: 'yhy', nickName: '' },
         { value: '司马师', words: 'sms', nickName: '' },
         { value: '杨彪', words: 'yb', nickName: '' },
+        { value: '南华老仙', words: 'nhlx', nickName: '' },
         // SP
         { value: '伏完', words: 'fw', nickName: '' },
         { value: '刘协', words: 'lx', nickName: '' },
@@ -398,6 +405,7 @@ export default {
         { value: '傅肜', words: 'fr', nickName: '' },
         { value: '陈登', words: 'cd', nickName: '' },
         { value: '胡车儿', words: 'hce', nickName: '' },
+        { value: '公孙康', words: 'gsk', nickName: '' },
       ],
     }
   },

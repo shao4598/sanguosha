@@ -155,9 +155,16 @@ export default {
         { value: '费祎', words: 'fy', nickName: '' },
         { value: '骆统', words: 'lt', nickName: '' },
         { value: '杜预', words: 'dy', nickName: '' },
+        { value: '卞夫人', words: 'bfr', nickName: '' },
+        { value: '孙邵', words: 'ss', nickName: '' },
         // 始计篇 信
         { value: '辛毗', words: 'xp', nickName: '' },
         { value: '周处', words: 'zc', nickName: '' },
+        { value: '吴景', words: 'wj', nickName: '' },
+        { value: '王甫赵累', words: 'wfzl', nickName: '' },
+        // 始计篇 仁
+        { value: '许靖', words: 'xj', nickName: '' },
+        { value: '向宠', words: 'xc', nickName: '' },
         // 神
         { value: '神关羽', words: 'sgy', nickName: '' },
         { value: '神吕蒙', words: 'slm', nickName: '' },
@@ -171,6 +178,7 @@ export default {
         { value: '神陆逊', words: 'slx', nickName: '' },
         { value: '神甘宁', words: 'sgn', nickName: '' },
         { value: '神张辽', words: 'szl', nickName: '' },
+        { value: '神郭嘉', words: 'sgj', nickName: '' },
         // 一将成名
         { value: '曹植', words: 'cz', nickName: '' },
         { value: '张春华', words: 'zch', nickName: '春哥' },
@@ -251,6 +259,7 @@ export default {
         { value: '朱桓', words: 'zh', nickName: '' },
         // 四将成名 界限突破
         { value: '界陈群', words: 'jcq', nickName: '' },
+        { value: '界周仓', words: 'jzc', nickName: '' },
         // 五将成名
         { value: '曹叡', words: 'cr', nickName: '' },
         { value: '曹休', words: 'cx', nickName: '' },

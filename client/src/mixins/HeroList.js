@@ -160,6 +160,7 @@ export default {
         // 始计篇 信
         { value: '辛毗', words: 'xp', nickName: '' },
         { value: '糜夫人', words: 'mfr', nickName: '' },
+        { value: '孔融', words: 'kr', nickName: '' },
         { value: '周处', words: 'zc', nickName: '' },
         { value: '吴景', words: 'wj', nickName: '' },
         { value: '王甫赵累', words: 'wfzl', nickName: '' },
@@ -176,8 +177,11 @@ export default {
         // 始计篇 勇
         { value: '高览', words: 'gl', nickName: '' },
         { value: '宗预', words: 'zy', nickName: '' },
-        { value: '孙翊', words: 'sy', nickName: '' },
         { value: '花鬘', words: 'hm', nickName: '' },
+        { value: '陈武董袭', words: 'cwdx', nickName: '' },
+        { value: '孙翊', words: 'sy', nickName: '' },
+        { value: '文鸯', words: 'wy', nickName: '' },
+        { value: '袁涣', words: 'yh', nickName: '' },
         // 始计篇 严
         { value: '蒋钦', words: 'jq', nickName: '' },
         { value: '蒋琬', words: 'jw', nickName: '' },
@@ -196,7 +200,9 @@ export default {
         { value: '神甘宁', words: 'sgn', nickName: '' },
         { value: '神张辽', words: 'szl', nickName: '' },
         { value: '神郭嘉', words: 'sgj', nickName: '' },
+        { value: '神太史慈', words: 'stsc', nickName: '' },
         { value: '神孙策', words: 'ssc', nickName: '' },
+        { value: '神荀彧', words: 'sxy', nickName: '' },
         // 一将成名
         { value: '曹植', words: 'cz', nickName: '' },
         { value: '张春华', words: 'zch', nickName: '春哥' },
@@ -281,6 +287,7 @@ export default {
         { value: '界曹真', words: 'jcz', nickName: '' },
         { value: '界顾雍', words: 'jgy', nickName: '' },
         { value: '界孙鲁班', words: 'jslb', nickName: '' },
+        { value: '界蔡夫人', words: 'jcfr', nickName: '' },
         // 五将成名
         { value: '曹叡', words: 'cr', nickName: '' },
         { value: '曹休', words: 'cx', nickName: '' },

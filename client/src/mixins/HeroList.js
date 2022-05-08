@@ -457,6 +457,16 @@ export default {
         { value: '兀突骨', words: 'wtg', nickName: '' },
         { value: '灵雎', words: 'lj', nickName: '' },
         { value: '阎圃', words: 'yp', nickName: '' },
+        // 体验
+        { value: '谋杨婉', words: 'myw', nickName: '' },
+        { value: '谋刘赪', words: 'mlc', nickName: '' },
+        { value: '谋徐晃', words: 'mxh', nickName: '' },
+        { value: '谋马超', words: 'mmc', nickName: '' },
+        { value: '谋吕蒙', words: 'mlm', nickName: '' },
+        { value: '谋于禁', words: 'myj', nickName: '' },
+        { value: '谋黄忠', words: 'mhz', nickName: '' },
+        { value: '谋孙权', words: 'msq', nickName: '' },
+        { value: '谋华雄', words: 'mhx', nickName: '' },
       ],
     }
   },

@@ -182,6 +182,7 @@ export default {
         { value: '孙翊', words: 'sy', nickName: '' },
         { value: '文鸯', words: 'wy', nickName: '' },
         { value: '袁涣', words: 'yh', nickName: '' },
+        { value: '王双', words: 'ws', nickName: '' },
         // 始计篇 严
         { value: '蒋钦', words: 'jq', nickName: '' },
         { value: '蒋琬', words: 'jw', nickName: '' },
@@ -300,6 +301,8 @@ export default {
         { value: '全琮', words: 'qz', nickName: '' },
         { value: '公孙渊', words: 'gsy', nickName: '' },
         { value: '郭图逄纪', words: 'gtpj', nickName: '' },
+        // 五将成名
+        { value: '界孙休', words: 'jxs', nickName: '' },
         // 六将成名
         { value: '郭皇后', words: 'ghh', nickName: '' },
         { value: '李严', words: 'ly', nickName: '' },
@@ -343,6 +346,8 @@ export default {
         { value: '司马师', words: 'sms', nickName: '' },
         { value: '杨彪', words: 'yb', nickName: '' },
         { value: '南华老仙', words: 'nhlx', nickName: '' },
+        { value: '星黄忠', words: 'xhz', nickName: '' },
+        { value: '孙寒华', words: 'shh', nickName: '' },
         // SP武将组1
         { value: '诸葛诞', words: 'zgd', nickName: '' },
         { value: '马良', words: 'ml', nickName: '' },
@@ -457,6 +462,9 @@ export default {
         { value: '兀突骨', words: 'wtg', nickName: '' },
         { value: '灵雎', words: 'lj', nickName: '' },
         { value: '阎圃', words: 'yp', nickName: '' },
+        { value: '马元义', words: 'myy', nickName: '' },
+        { value: '谯周', words: 'qz', nickName: '' },
+        { value: '毛玠', words: 'mj', nickName: '' },
         // 体验
         { value: '谋杨婉', words: 'myw', nickName: '' },
         { value: '谋刘赪', words: 'mlc', nickName: '' },

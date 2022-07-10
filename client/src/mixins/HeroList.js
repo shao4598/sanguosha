@@ -302,7 +302,7 @@ export default {
         { value: '公孙渊', words: 'gsy', nickName: '' },
         { value: '郭图逄纪', words: 'gtpj', nickName: '' },
         // 五将成名
-        { value: '界孙休', words: 'jxs', nickName: '' },
+        { value: '界孙休', words: 'jsx', nickName: '' },
         // 六将成名
         { value: '郭皇后', words: 'ghh', nickName: '' },
         { value: '李严', words: 'ly', nickName: '' },

@@ -174,6 +174,7 @@ export default {
         { value: '张仲景', words: 'zzj', nickName: '' },
         { value: '张温', words: 'zw', nickName: '' },
         { value: '蔡贞姬', words: 'czj', nickName: '' },
+        { value: '桥公', words: 'qg', nickName: '' },
         // 始计篇 勇
         { value: '高览', words: 'gl', nickName: '' },
         { value: '宗预', words: 'zy', nickName: '' },
@@ -187,6 +188,9 @@ export default {
         { value: '蒋钦', words: 'jq', nickName: '' },
         { value: '蒋琬', words: 'jw', nickName: '' },
         { value: '崔琰', words: 'cy', nickName: '' },
+        { value: '张昌蒲', words: 'zcp', nickName: '' },
+        { value: '黄浦嵩', words: 'hps', nickName: '' },
+        { value: '朱儁', words: 'zj', nickName: '' },
         // 神
         { value: '神关羽', words: 'sgy', nickName: '' },
         { value: '神吕蒙', words: 'slm', nickName: '' },
@@ -465,14 +469,20 @@ export default {
         { value: '马元义', words: 'myy', nickName: '' },
         { value: '谯周', words: 'qz', nickName: '' },
         { value: '毛玠', words: 'mj', nickName: '' },
-        // 体验
-        { value: '谋杨婉', words: 'myw', nickName: '' },
-        { value: '谋刘赪', words: 'mlc', nickName: '' },
+        // 谋攻篇 知
+        // 谋攻篇 识
         { value: '谋徐晃', words: 'mxh', nickName: '' },
         { value: '谋马超', words: 'mmc', nickName: '' },
+        // 谋攻篇 同
+        { value: '谋刘赪', words: 'mlc', nickName: '' },
+        { value: '谋杨婉', words: 'myw', nickName: '' },
+        { value: '谋张飞', words: 'mzf', nickName: '' },
+        { value: '谋赵云', words: 'mzy', nickName: '' },
+        // 谋攻篇 虞
         { value: '谋吕蒙', words: 'mlm', nickName: '' },
         { value: '谋于禁', words: 'myj', nickName: '' },
         { value: '谋黄忠', words: 'mhz', nickName: '' },
+        // 谋攻篇 能
         { value: '谋孙权', words: 'msq', nickName: '' },
         { value: '谋华雄', words: 'mhx', nickName: '' },
       ],

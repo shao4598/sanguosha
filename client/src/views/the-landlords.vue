@@ -473,21 +473,21 @@
 </template>
 
 <script>
-import axios from 'axios'
-import dayjs from 'dayjs'
-import RecordsMaps from '@/mixins/RecordsMaps.js'
-import HeroList from '@/mixins/HeroList.js'
+import axios from 'axios';
+import dayjs from 'dayjs';
+import RecordsMaps from '@/mixins/records-dic.js';
+import HeroList from '@/mixins/hero-list.js';
 export default {
   mixins: [RecordsMaps, HeroList],
   created() {
-    this.token = this.$route.params.id
+    this.token = this.$route.params.id;
     if (this.token !== 's21294' && this.token !== 'w15579') {
-      return
+      return;
     }
-    this.getRecordsGames()
-    this.getNowGolds()
-    this.getNowBeans()
-    this.getIncome()
+    this.getRecordsGames();
+    this.getNowGolds();
+    this.getNowBeans();
+    this.getIncome();
   },
   data() {
     return {
@@ -548,27 +548,27 @@ export default {
       recordsGolds: [],
       recordsBeans: [],
       serverUrl: '',
-    }
+    };
   },
   computed: {
     datePickerRangeUnix() {
       return {
         start: dayjs(this.datePicker.range.start).unix(),
         end: dayjs(this.datePicker.range.end).unix(),
-      }
+      };
     },
   },
   methods: {
     search() {
-      this.getRecordsGames()
-      this.getIncome()
+      this.getRecordsGames();
+      this.getIncome();
     },
     querySearch(queryString, callback) {
       const results = queryString
         ? this.heroList.filter(this.createFilter(queryString))
-        : this.heroList
+        : this.heroList;
       // 调用 callback 返回建议列表的数据
-      callback(results)
+      callback(results);
     },
     createFilter(queryString) {
       return (item) => {
@@ -576,11 +576,11 @@ export default {
           item.words.includes(queryString) ||
           item.value.includes(queryString) ||
           item.nickName.includes(queryString)
-        )
-      }
+        );
+      };
     },
     isBoldName(rowRole, thisRole) {
-      return { fontWeight: rowRole === thisRole ? 'bold' : 'normal' }
+      return { fontWeight: rowRole === thisRole ? 'bold' : 'normal' };
     },
     onDeleteRecordsGames(index, row) {
       this.$confirm('是否确认删除?', '提示', {
@@ -599,15 +599,15 @@ export default {
             })
             .then(({ data: { status } }) => {
               if (status !== '0') {
-                return
+                return;
               }
-              this.getRecordsGames()
-              this.getNowGolds()
-              this.getNowBeans()
-              this.getIncome()
-            })
+              this.getRecordsGames();
+              this.getNowGolds();
+              this.getNowBeans();
+              this.getIncome();
+            });
         })
-        .catch(() => {})
+        .catch(() => {});
     },
     onDeleteRecordsGolds(index, row) {
       this.$confirm('是否确认删除?', '提示', {
@@ -625,13 +625,13 @@ export default {
             })
             .then(({ data: { status } }) => {
               if (status !== '0') {
-                return
+                return;
               }
-              this.getNowGolds()
-              this.getRecordsGolds()
-            })
+              this.getNowGolds();
+              this.getRecordsGolds();
+            });
         })
-        .catch(() => {})
+        .catch(() => {});
     },
     onDeleteRecordsBeans(index, row) {
       this.$confirm('是否确认删除?', '提示', {
@@ -649,85 +649,85 @@ export default {
             })
             .then(({ data: { status } }) => {
               if (status !== '0') {
-                return
+                return;
               }
               this.$message({
                 type: 'success',
                 message: '删除成功!',
-              })
-              this.getNowBeans()
-              this.getRecordsBeans()
-            })
+              });
+              this.getNowBeans();
+              this.getRecordsBeans();
+            });
         })
-        .catch(() => {})
+        .catch(() => {});
     },
     onCloseDialogRecordsGames() {
-      this.ckbIsFleeVisible = false
-      const form = this.formRecordsGames
-      form.room = '0'
-      form.landlord = ''
-      form.farmer1 = ''
-      form.farmer2 = ''
-      form.isWin = '1'
-      form.role = '0'
-      form.multiple = '3'
-      form.golds = ''
-      form.beans = ''
-      form.remarks = ''
-      form.isFlee = '0'
+      this.ckbIsFleeVisible = false;
+      const form = this.formRecordsGames;
+      form.room = '0';
+      form.landlord = '';
+      form.farmer1 = '';
+      form.farmer2 = '';
+      form.isWin = '1';
+      form.role = '0';
+      form.multiple = '3';
+      form.golds = '';
+      form.beans = '';
+      form.remarks = '';
+      form.isFlee = '0';
     },
     onChangeIsWin(val) {
-      const res = val === '0'
-      this.ckbIsFleeVisible = res
+      const res = val === '0';
+      this.ckbIsFleeVisible = res;
       if (!res) {
-        this.formRecordsGames.isFlee = '0'
+        this.formRecordsGames.isFlee = '0';
       }
     },
     onChangeBeansMode(val) {
-      this.formRecordsBeans.count = this.beansModeMap[parseInt(val)].count
+      this.formRecordsBeans.count = this.beansModeMap[parseInt(val)].count;
     },
     onChangeGoldsMode(val) {
-      this.formRecordsGolds.count = this.goldsModeMap[parseInt(val)].count
+      this.formRecordsGolds.count = this.goldsModeMap[parseInt(val)].count;
     },
     onSubmitRecordsGames() {
-      let golds = 0
-      let beans = 0
-      const form = this.formRecordsGames
-      const base = form.room === '0' ? 100 : 300
-      const tickets = form.room === '0' ? 10 : 40
+      let golds = 0;
+      let beans = 0;
+      const form = this.formRecordsGames;
+      const base = form.room === '0' ? 100 : 300;
+      const tickets = form.room === '0' ? 10 : 40;
       if (form.isWin === '1') {
-        golds += base * parseInt(form.multiple)
-        beans -= tickets
+        golds += base * parseInt(form.multiple);
+        beans -= tickets;
         // 地主翻倍
         if (form.role === '0') {
-          golds *= 2
-          beans *= 2
+          golds *= 2;
+          beans *= 2;
         }
       } else {
-        beans -= base * parseInt(form.multiple)
+        beans -= base * parseInt(form.multiple);
         // 地主翻倍
         if (form.role === '0') {
-          beans *= 2
+          beans *= 2;
         }
         // 逃跑多扣5个豆
         if (form.isFlee === '1') {
-          beans -= 5
+          beans -= 5;
         }
       }
-      form.golds = golds.toString()
-      form.beans = beans.toString()
+      form.golds = golds.toString();
+      form.beans = beans.toString();
       axios
         .post(this.serverUrl + '/records/games/' + this.token, form)
         .then(({ data: { status } }) => {
           if (status !== '0') {
-            return
+            return;
           }
-          this.getRecordsGames()
-          this.getNowGolds()
-          this.getNowBeans()
-          this.getIncome()
-          this.dialogFormGamesVisible = false
-        })
+          this.getRecordsGames();
+          this.getNowGolds();
+          this.getNowBeans();
+          this.getIncome();
+          this.dialogFormGamesVisible = false;
+        });
     },
     onSubmitRecordsGolds() {
       axios
@@ -737,11 +737,11 @@ export default {
         )
         .then(({ data: { status } }) => {
           if (status !== '0') {
-            return
+            return;
           }
-          this.getNowGolds()
-          this.dialogFormGoldsVisible = false
-        })
+          this.getNowGolds();
+          this.dialogFormGoldsVisible = false;
+        });
     },
     onSubmitRecordsBeans() {
       axios
@@ -751,55 +751,55 @@ export default {
         )
         .then(({ data: { status } }) => {
           if (status !== '0') {
-            return
+            return;
           }
-          this.getNowBeans()
-          this.dialogFormBeansVisible = false
-        })
+          this.getNowBeans();
+          this.dialogFormBeansVisible = false;
+        });
     },
     getRecordsGames() {
-      const form = this.formSearch
+      const form = this.formSearch;
       if (form.player === '1' && form.role === 'all') {
         this.$message({
           message: '请选择身份',
           type: 'warning',
-        })
-        return
+        });
+        return;
       }
-      this.recordsGames = []
+      this.recordsGames = [];
       axios
         .get(this.serverUrl + '/records/games/' + this.token, {
           params: this.datePickerRangeUnix,
         })
         .then(({ data: { status, data } }) => {
           if (status !== '0') {
-            return
+            return;
           }
           data.forEach((item) => {
             if (form.isWin !== 'all' && form.isWin !== item.is_win) {
-              return
+              return;
             }
 
             if (form.player === '0') {
               if (form.role !== 'all') {
                 if (form.role !== item.role) {
-                  return
+                  return;
                 }
               }
               if (form.hero !== '') {
                 if (item.role === '0') {
                   if (item.landlord !== form.hero) {
-                    return
+                    return;
                   }
                 }
                 if (item.role === '1') {
                   if (item.farmer1 !== form.hero) {
-                    return
+                    return;
                   }
                 }
                 if (item.role === '2') {
                   if (item.farmer2 !== form.hero) {
-                    return
+                    return;
                   }
                 }
               }
@@ -807,23 +807,23 @@ export default {
 
             if (form.player === '1') {
               if (form.role === item.role) {
-                return
+                return;
               }
 
               if (form.hero !== '') {
                 if (form.role === '0') {
                   if (item.landlord !== form.hero) {
-                    return
+                    return;
                   }
                 }
                 if (form.role === '1') {
                   if (item.farmer1 !== form.hero) {
-                    return
+                    return;
                   }
                 }
                 if (form.role === '2') {
                   if (item.farmer2 !== form.hero) {
-                    return
+                    return;
                   }
                 }
               }
@@ -831,11 +831,11 @@ export default {
 
             const date = dayjs
               .unix(parseInt(item.timestamp))
-              .format('MM-DD HH:mm')
-            const color = this.isWinMap[parseInt(item.is_win)].color
-            const roomLabel = this.roomMap[parseInt(item.room)]
-            const isWinLabel = this.isWinMap[parseInt(item.is_win)].label
-            const roleLabel = this.roleMap[parseInt(item.role)]
+              .format('MM-DD HH:mm');
+            const color = this.isWinMap[parseInt(item.is_win)].color;
+            const roomLabel = this.roomMap[parseInt(item.room)];
+            const isWinLabel = this.isWinMap[parseInt(item.is_win)].label;
+            const roleLabel = this.roleMap[parseInt(item.role)];
 
             this.recordsGames.push({
               date,
@@ -855,73 +855,73 @@ export default {
               room: item.room,
               remarks: item.remarks,
               isFlee: item.is_flee,
-            })
-          })
-        })
+            });
+          });
+        });
     },
     getRecordsGolds() {
-      this.recordsGolds = []
+      this.recordsGolds = [];
       axios
         .get(this.serverUrl + '/records/golds/' + this.token)
         .then(({ data: { status, data } }) => {
           if (status !== '0') {
-            return
+            return;
           }
           data.forEach((item) => {
             const date = dayjs
               .unix(parseInt(item.timestamp))
-              .format('MM-DD HH:mm')
-            const mode = this.goldsModeMap[parseInt(item.mode)].label
+              .format('MM-DD HH:mm');
+            const mode = this.goldsModeMap[parseInt(item.mode)].label;
             this.recordsGolds.push({
               date,
               guid: item.guid,
               count: item.count,
               mode,
-            })
-          })
-        })
+            });
+          });
+        });
     },
     getRecordsBeans() {
-      this.recordsBeans = []
+      this.recordsBeans = [];
       axios
         .get(this.serverUrl + '/records/beans/' + this.token)
         .then(({ data: { status, data } }) => {
           if (status !== '0') {
-            return
+            return;
           }
           data.forEach((item) => {
             const date = dayjs
               .unix(parseInt(item.timestamp))
-              .format('MM-DD HH:mm')
-            const mode = this.beansModeMap[parseInt(item.mode)].label
+              .format('MM-DD HH:mm');
+            const mode = this.beansModeMap[parseInt(item.mode)].label;
             this.recordsBeans.push({
               date,
               guid: item.guid,
               count: item.count,
               mode,
-            })
-          })
-        })
+            });
+          });
+        });
     },
     getNowGolds() {
       axios
         .get(this.serverUrl + '/assets/golds/' + this.token)
         .then(({ data: { status, data } }) => {
           if (status !== '0') {
-            return
+            return;
           }
-          this.nowGolds = data
-        })
+          this.nowGolds = data;
+        });
     },
     getNowBeans() {
       axios
         .get(this.serverUrl + '/assets/beans/' + this.token)
         .then(({ data: { status, data } }) => {
           if (status !== '0') {
-            return
+            return;
           }
-          this.nowBeans = data
-        })
+          this.nowBeans = data;
+        });
     },
     getIncome() {
       axios
@@ -930,14 +930,14 @@ export default {
         })
         .then(({ data: { status, data } }) => {
           if (status !== '0') {
-            return
+            return;
           }
-          this.todayBeans = data.beans
-          this.todayGolds = data.golds
-        })
+          this.todayBeans = data.beans;
+          this.todayGolds = data.golds;
+        });
     },
   },
-}
+};
 </script>
 
 <style>

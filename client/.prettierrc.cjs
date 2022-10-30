@@ -17,7 +17,7 @@ module.exports = {
   //结尾处书写分号
   //Print semicolons at the ends of statements.
   //Default: true
-  semi: false,
+  semi: true,
 
   //使用单引号代替双引号
   //Use single quotes instead of double quotes.

@@ -13,11 +13,11 @@
 export default {
   methods: {
     onJump(token) {
-      const path = '/Landlords/' + token
-      this.$router.push({ path })
+      const path = '/Landlords/' + token;
+      this.$router.push({ path });
     },
   },
-}
+};
 </script>
 
 <style>

@@ -1,5 +1,5 @@
-import Landlords from '@/views/Landlords.vue'
-import Login from '@/views/Login.vue'
+import Landlords from '@/views/the-landlords.vue';
+import Login from '@/views/the-login.vue';
 
 export default [
   {
@@ -10,4 +10,4 @@ export default [
     path: '/',
     component: Login,
   },
-]
+];

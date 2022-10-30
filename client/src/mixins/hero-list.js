@@ -471,6 +471,8 @@ export default {
         { value: '毛玠', words: 'mj', nickName: '' },
         // 谋攻篇 知
         // 谋攻篇 识
+        { value: '谋杨婉', words: 'myw', nickName: '' },
+        { value: '谋刘赪', words: 'mlc', nickName: '' },
         { value: '谋徐晃', words: 'mxh', nickName: '' },
         { value: '谋马超', words: 'mmc', nickName: '' },
         // 谋攻篇 同
@@ -486,6 +488,6 @@ export default {
         { value: '谋孙权', words: 'msq', nickName: '' },
         { value: '谋华雄', words: 'mhx', nickName: '' },
       ],
-    }
+    };
   },
-}
+};

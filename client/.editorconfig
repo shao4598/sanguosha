@@ -1,5 +1,9 @@
-[*.{js,jsx,ts,tsx,vue}]
+[*]
+# 使用空格缩进
 indent_style = space
+# 一个缩进单位等于两个空格
 indent_size = 2
+# 清除行尾空格
 trim_trailing_whitespace = true
+# 行尾后面新增一行
 insert_final_newline = true

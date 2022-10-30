@@ -44,7 +44,7 @@ export default {
         1: { label: '周薪', count: '1000' },
         2: { label: '红包', count: '10' },
         3: { label: '盒子/福袋/礼包赠送', count: '50' },
-        4: { label: '签到', count: '2' },
+        4: { label: '签到', count: '50' },
         5: { label: '元宝/金币购买', count: '10000' },
         6: { label: '金票内循环', count: '2000' },
         7: { label: '其它', count: '0' },

@@ -191,6 +191,7 @@ export default {
         { value: '张昌蒲', words: 'zcp', nickName: '' },
         { value: '黄浦嵩', words: 'hps', nickName: '' },
         { value: '朱儁', words: 'zj', nickName: '' },
+        { value: '吕范', words: 'lf', nickName: '' },
         // 神
         { value: '神关羽', words: 'sgy', nickName: '' },
         { value: '神吕蒙', words: 'slm', nickName: '' },
@@ -471,8 +472,6 @@ export default {
         { value: '毛玠', words: 'mj', nickName: '' },
         // 谋攻篇 知
         // 谋攻篇 识
-        { value: '谋杨婉', words: 'myw', nickName: '' },
-        { value: '谋刘赪', words: 'mlc', nickName: '' },
         { value: '谋徐晃', words: 'mxh', nickName: '' },
         { value: '谋马超', words: 'mmc', nickName: '' },
         // 谋攻篇 同

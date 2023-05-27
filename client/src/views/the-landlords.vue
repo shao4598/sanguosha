@@ -476,10 +476,16 @@
 import axios from 'axios';
 import dayjs from 'dayjs';
 import RecordsMaps from '@/mixins/records-dic.js';
-import HeroList from '@/mixins/hero-list.js';
+import JSON5 from 'json5';
 export default {
-  mixins: [RecordsMaps, HeroList],
+  mixins: [RecordsMaps],
   created() {
+    axios.get('/hero-list.json5').then(({ status, data }) => {
+      if (status !== 200) {
+        return;
+      }
+      this.heroList = JSON5.parse(data);
+    });
     this.token = this.$route.params.id;
     if (this.token !== 's21294' && this.token !== 'w15579') {
       return;
@@ -548,6 +554,7 @@ export default {
       recordsGolds: [],
       recordsBeans: [],
       serverUrl: '',
+      heroList: [],
     };
   },
   computed: {

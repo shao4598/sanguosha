@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import { createVuePlugin } from 'vite-plugin-vue2';
+import vue from '@vitejs/plugin-vue2';
 import { resolve } from 'path';
 import { viteCommonjs } from '@originjs/vite-plugin-commonjs';
 
@@ -8,7 +8,7 @@ export default defineConfig({
     sourcemap: false,
   },
   plugins: [
-    createVuePlugin(),
+    vue(),
     viteCommonjs(), // require引入转换成import引入
   ],
   resolve: {

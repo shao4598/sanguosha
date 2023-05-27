@@ -189,6 +189,7 @@
   { value: '黄浦嵩', words: 'hps', nickName: '' },
   { value: '朱儁', words: 'zj', nickName: '' },
   { value: '吕范', words: 'lf', nickName: '' },
+  { value: '刘巴', words: 'lb', nickName: '' },
   // 神
   { value: '神关羽', words: 'sgy', nickName: '' },
   { value: '神吕蒙', words: 'slm', nickName: '' },
@@ -291,6 +292,9 @@
   { value: '界顾雍', words: 'jgy', nickName: '' },
   { value: '界孙鲁班', words: 'jslb', nickName: '' },
   { value: '界蔡夫人', words: 'jcfr', nickName: '' },
+  { value: '界沮受', words: 'jjs', nickName: '' },
+  { value: '界吴懿', words: 'jwy', nickName: '' },
+  { value: '界朱桓', words: 'jzh', nickName: '' },
   // 五将成名
   { value: '曹叡', words: 'cr', nickName: '' },
   { value: '曹休', words: 'cx', nickName: '' },
@@ -300,11 +304,14 @@
   { value: '张嶷', words: 'zn', nickName: '' },
   { value: '孙休', words: 'sx', nickName: '' },
   { value: '朱治', words: 'zz', nickName: '' },
-  { value: '全琮', words: 'qz', nickName: '' },
+  { value: '全琮', words: 'qc', nickName: '' },
   { value: '公孙渊', words: 'gsy', nickName: '' },
   { value: '郭图逄纪', words: 'gtpj', nickName: '' },
-  // 五将成名
+  // 五将成名 界限突破
   { value: '界孙休', words: 'jsx', nickName: '' },
+  { value: '界全琮', words: 'jqc', nickName: '' },
+  { value: '界曹休', words: 'jcx', nickName: '' },
+  { value: '界朱治', words: 'jzz', nickName: '' },
   // 六将成名
   { value: '郭皇后', words: 'ghh', nickName: '' },
   { value: '李严', words: 'ly', nickName: '' },
@@ -462,12 +469,23 @@
   { value: '周群', words: 'zq', nickName: '' },
   // SP武将组11
   { value: '兀突骨', words: 'wtg', nickName: '' },
-  { value: '灵雎', words: 'lj', nickName: '' },
   { value: '阎圃', words: 'yp', nickName: '' },
-  { value: '马元义', words: 'myy', nickName: '' },
   { value: '谯周', words: 'qz', nickName: '' },
+  { value: '灵雎', words: 'lj', nickName: '' },
+  { value: '马元义', words: 'myy', nickName: '' },
   { value: '毛玠', words: 'mj', nickName: '' },
+  { value: '傅佥', words: 'fq', nickName: '' },
+  { value: '阮慧', words: 'rh', nickName: '' },
+  { value: '金日磾', words: 'mmd', nickName: '' },
+  { value: '王濬', words: 'wj', nickName: '' },
+  // SP武将组11
+  { value: '曹嵩', words: 'cs', nickName: '' },
+  { value: '裴秀', words: 'px', nickName: '' },
   // 谋攻篇 知
+  { value: '谋曹操', words: 'mcc', nickName: '' },
+  { value: '谋周瑜', words: 'mzy', nickName: '' },
+  { value: '谋甄姬', words: 'mzj', nickName: '' },
+  { value: '谋刘备', words: 'mlb', nickName: '' },
   // 谋攻篇 识
   { value: '谋徐晃', words: 'mxh', nickName: '' },
   { value: '谋马超', words: 'mmc', nickName: '' },
@@ -476,11 +494,15 @@
   { value: '谋杨婉', words: 'myw', nickName: '' },
   { value: '谋张飞', words: 'mzf', nickName: '' },
   { value: '谋赵云', words: 'mzy', nickName: '' },
+  { value: '谋夏侯氏', words: 'mxhs', nickName: '' },
   // 谋攻篇 虞
   { value: '谋吕蒙', words: 'mlm', nickName: '' },
   { value: '谋于禁', words: 'myj', nickName: '' },
   { value: '谋黄忠', words: 'mhz', nickName: '' },
+  { value: '谋黄盖', words: 'mhg', nickName: '' },
+  { value: '谋曹仁', words: 'mcr', nickName: '' },
   // 谋攻篇 能
   { value: '谋孙权', words: 'msq', nickName: '' },
   { value: '谋华雄', words: 'mhx', nickName: '' },
+  { value: '谋姜维', words: 'mjw', nickName: '' },
 ]

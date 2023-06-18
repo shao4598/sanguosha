@@ -1,36 +1,66 @@
-import { Table } from '@mantine/core';
+import { Badge, Button, Table } from '@mantine/core'
+import { useMemo } from 'react'
+import type { ReactElement } from 'react'
+import { type ContentTableProps } from './types'
+import dayjs from 'dayjs'
+import { dictResult, dictRole } from './model/dict'
+import { RESULT } from './model/enum'
 
-const elements = [
-    { position: 6, mass: 12.011, symbol: 'C', name: 'Carbon' },
-    { position: 7, mass: 14.007, symbol: 'N', name: 'Nitrogen' },
-    { position: 39, mass: 88.906, symbol: 'Y', name: 'Yttrium' },
-    { position: 56, mass: 137.33, symbol: 'Ba', name: 'Barium' },
-    { position: 58, mass: 140.12, symbol: 'Ce', name: 'Cerium' },
-  ];
+const headElements = [
+  { name: '日期', maxSpan: 12 },
+  { name: '结果', maxSpan: 12 },
+  { name: '身份', maxSpan: 12 },
+  { name: '地主', maxSpan: 8 },
+  { name: '农民1', maxSpan: 8 },
+  { name: '农民2', maxSpan: 8 },
+  { name: '备注', maxSpan: 8 },
+  { name: '操作', maxSpan: 12 }
+]
 
-const ContentTable = () =>{
-  const rows = elements.map((element) => (
-    <tr key={element.name}>
-      <td>{element.position}</td>
-      <td>{element.name}</td>
-      <td>{element.symbol}</td>
-      <td>{element.mass}</td>
-    </tr>
-  ));
+const ContentTable = ({ col, data, onDeleteRecord }: ContentTableProps): ReactElement => {
+  const rows = useMemo(() =>
+    data.map((item) => {
+      const requireContent = (
+        <>
+          <td>{dayjs.unix(Number(item.timestamp)).format('MM-DD')}</td>
+          <td><Badge radius="xs" variant="filled" color={item.is_win === RESULT.WIN ? 'red' : 'blue'}>{dictResult.get(item.is_win)}</Badge></td>
+          <td>{dictRole.get(item.role)}</td>
+        </>
+      )
+
+      const operationButtons = (
+        <>
+          <td><Button onClick={() => { onDeleteRecord(item.guid) }}>删除</Button></td>
+        </>
+      )
+
+      if (col === 8) {
+        return (<tr key={item.guid}>
+          {requireContent}
+          <td>{item.landlord}</td>
+          <td>{item.farmer1}</td>
+          <td>{item.farmer2}</td>
+          <td>{item.remarks}</td>
+          {operationButtons}
+        </tr>)
+      }
+      return (<tr key={item.guid}>
+        {requireContent}
+        {operationButtons}
+      </tr>)
+    }), [col, data])
+
+  const heads = useMemo(() =>
+    headElements.filter(item => item.maxSpan >= col).map(item => (
+      <th key={item.name}>{item.name}</th>
+    )), [col])
 
   return (
-    <Table>
-      <thead>
-        <tr>
-          <th>Element position</th>
-          <th>Element name</th>
-          <th>Symbol</th>
-          <th>Atomic mass</th>
-        </tr>
-      </thead>
+    <Table striped highlightOnHover withBorder>
+      <thead><tr>{heads}</tr></thead>
       <tbody>{rows}</tbody>
     </Table>
-  );
+  )
 }
 
-export default ContentTable;
+export default ContentTable

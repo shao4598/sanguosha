@@ -1,1 +1,5 @@
-/// <reference types="vite/client" />
+import viteClient from 'vite/client'
+
+export {
+  viteClient
+}

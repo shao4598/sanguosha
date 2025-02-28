@@ -1,20 +1,21 @@
 import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue2';
+import vue2 from '@vitejs/plugin-vue2';
+import vueJsx from '@vitejs/plugin-vue2-jsx';
 import { resolve } from 'path';
-import { viteCommonjs } from '@originjs/vite-plugin-commonjs';
 
 export default defineConfig({
   build: {
     sourcemap: false,
   },
   plugins: [
-    vue(),
-    viteCommonjs(), // require引入转换成import引入
+    vue2(),
+    vueJsx(), // require引入转换成import引入
   ],
   resolve: {
     extensions: ['.vue', '.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'],
     alias: {
       '@': resolve('src'),
+      vue: 'vue/dist/vue.esm.js', // 指向完整版的 Vue
     },
   },
   server: {

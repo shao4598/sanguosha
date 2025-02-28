@@ -3,15 +3,11 @@ import App from './app.vue';
 import ElementUI from 'element-ui';
 import VueRouter from 'vue-router';
 import VueRouterParam from './routers';
-import DatePicker from 'v-calendar/lib/components/date-picker.umd';
+import VCalendar from 'v-calendar';
 import 'element-ui/lib/theme-chalk/index.css';
+import './style.css';
 
-Vue.component('date-picker', DatePicker);
-
-/* Vue.use(VCalendar, {
-	componentPrefix: 'vc',
-}) */
-
+Vue.use(VCalendar);
 Vue.use(ElementUI);
 Vue.use(VueRouter);
 

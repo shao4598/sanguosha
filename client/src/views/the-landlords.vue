@@ -127,12 +127,12 @@
       <el-col :span="5">
         <el-form label-width="50px" :model="formSearch" style="width: 90%">
           <el-form-item label-width="0px">
-            <date-picker
+            <v-date-picker
               v-model="datePicker.range"
               :model-config="datePicker.config"
               is-range
               is-expanded
-            ></date-picker>
+            />
           </el-form-item>
           <el-form-item label="武将">
             <el-autocomplete
